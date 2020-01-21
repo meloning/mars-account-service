@@ -1,4 +1,4 @@
-resources/application.yml
+src/main/resources/application.yml
 HELP.md
 .gradle
 build/
