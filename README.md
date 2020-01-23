@@ -9,7 +9,7 @@ Server Architecture는 크게 Boundaries, Core, Infra로 나뉘어집니다.
 - Infra: Entity, EntityRepository (with CrudRepository, MongoRepository etc..), ModelRepositoryImpl, Config
 
 ### Flow
-
+![temp](https://github.com/meloning/mars-account-service/blob/master/Server%20Clean%20Architecture.png)
 Client의 Request가 들어오면, 요청을 전달해주는 역할을 가진 Boundaries 영역에서 요청형태에 따라 gRpc, RestController로 Data를 전달합니다.
 이때 요청 Data를 전달받은 Core 영역에서는 비즈니스 로직을 처리하는 Usecase에서 Data를 가공 처리합니다.
 비즈니스 흐름에 따라 Data Store가 필요하면, 요청을 통해 전달받은 Data를 Model로 생성하여, interface기반 ModelRepository에게 Data처리를 위한 Message(with crud)를 요청합니다.
