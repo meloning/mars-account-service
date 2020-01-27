@@ -7,6 +7,11 @@ plugins {
     kotlin("plugin.spring") version "1.3.61"
 }
 
+apply {
+    plugin("groovy")
+}
+
+val spockVersion = "1.1-groovy-2.4"
 group = "com.mars"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
@@ -34,6 +39,10 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+    testImplementation("org.codehaus.groovy:groovy")
+    testImplementation("org.codehaus.groovy:groovy-test")
+    testImplementation("org.spockframework:spock-core:$spockVersion")
+    testImplementation("org.spockframework:spock-spring:$spockVersion")
     testImplementation("org.springframework.security:spring-security-test")
 }
 
