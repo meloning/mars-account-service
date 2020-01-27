@@ -20,9 +20,9 @@ Client의 Request가 들어오면, 요청을 전달해주는 역할을 가진 Bo
 Message요청을 받은 ModelRepositoryImpl에서 실제 Data를 저장하기위해 ModelToEntity로 Convert하여, EntityRepository의 Message를 통해 DB에 저장하는 FLow입니다.
 
 
-핵심 비즈니스로직을 처리하는 책임을 가진 Usecase에선 DB 저장하는 형태가 NoSQL기반인지, RDB기반인지 알 필요가 없게되기때문에 결합도는 낮고, 응집도는 높은 형태라고 볼 수 있습니다.
+핵심 비즈니스로직을 처리하는 책임을 가진 Usecase에선 DB 저장하는 형태가 NoSQL기반인지, RDB기반인지 알 필요가 없게되기때문에 결합도는 낮고, 응집도는 높은 형태라고 볼 수 있습니다. (Open-Closed Principle)
 
 ## TODO
-- [ ] Unit/Integration Test Code based on Spock Framework(BDD)
+- [x] Unit/Integration Test Code based on Spock Framework(BDD)
 - [ ] Security, Oauth2 Impl
 - [ ] CI/CD 구축해보기(travisCI?) -> Gradle에서 Unit/Integration Test Build 나뉘도록 구성해볼것.(Need search)
